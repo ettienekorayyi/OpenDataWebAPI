@@ -1,0 +1,14 @@
+C:\Users\Stephen\Documents\Visual Studio Code\C#\OpenDataWebAPI\OpalTrainMonthlyTrips\OpalCard\bin\Debug\netcoreapp2.1\OpalCard.deps.json
+C:\Users\Stephen\Documents\Visual Studio Code\C#\OpenDataWebAPI\OpalTrainMonthlyTrips\OpalCard\bin\Debug\netcoreapp2.1\OpalCard.runtimeconfig.json
+C:\Users\Stephen\Documents\Visual Studio Code\C#\OpenDataWebAPI\OpalTrainMonthlyTrips\OpalCard\bin\Debug\netcoreapp2.1\OpalCard.runtimeconfig.dev.json
+C:\Users\Stephen\Documents\Visual Studio Code\C#\OpenDataWebAPI\OpalTrainMonthlyTrips\OpalCard\bin\Debug\netcoreapp2.1\OpalCard.dll
+C:\Users\Stephen\Documents\Visual Studio Code\C#\OpenDataWebAPI\OpalTrainMonthlyTrips\OpalCard\bin\Debug\netcoreapp2.1\OpalCard.pdb
+C:\Users\Stephen\Documents\Visual Studio Code\C#\OpenDataWebAPI\OpalTrainMonthlyTrips\OpalCard\obj\Debug\netcoreapp2.1\OpalCard.csprojAssemblyReference.cache
+C:\Users\Stephen\Documents\Visual Studio Code\C#\OpenDataWebAPI\OpalTrainMonthlyTrips\OpalCard\obj\Debug\netcoreapp2.1\OpalCard.csproj.CoreCompileInputs.cache
+C:\Users\Stephen\Documents\Visual Studio Code\C#\OpenDataWebAPI\OpalTrainMonthlyTrips\OpalCard\obj\Debug\netcoreapp2.1\OpalCard.RazorAssemblyInfo.cache
+C:\Users\Stephen\Documents\Visual Studio Code\C#\OpenDataWebAPI\OpalTrainMonthlyTrips\OpalCard\obj\Debug\netcoreapp2.1\OpalCard.RazorAssemblyInfo.cs
+C:\Users\Stephen\Documents\Visual Studio Code\C#\OpenDataWebAPI\OpalTrainMonthlyTrips\OpalCard\obj\Debug\netcoreapp2.1\OpalCard.AssemblyInfoInputs.cache
+C:\Users\Stephen\Documents\Visual Studio Code\C#\OpenDataWebAPI\OpalTrainMonthlyTrips\OpalCard\obj\Debug\netcoreapp2.1\OpalCard.AssemblyInfo.cs
+C:\Users\Stephen\Documents\Visual Studio Code\C#\OpenDataWebAPI\OpalTrainMonthlyTrips\OpalCard\obj\Debug\netcoreapp2.1\OpalCard.RazorTargetAssemblyInfo.cache
+C:\Users\Stephen\Documents\Visual Studio Code\C#\OpenDataWebAPI\OpalTrainMonthlyTrips\OpalCard\obj\Debug\netcoreapp2.1\OpalCard.dll
+C:\Users\Stephen\Documents\Visual Studio Code\C#\OpenDataWebAPI\OpalTrainMonthlyTrips\OpalCard\obj\Debug\netcoreapp2.1\OpalCard.pdb
