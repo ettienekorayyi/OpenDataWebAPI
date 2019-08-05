@@ -8,14 +8,21 @@ using OpalCard.Model;
 namespace OpalCard.Classes {
     public class FileReader : IFileReader {
         private IFileReader _fileReader;
+        
+        public FileReader () { 
+            // I added this so that it doesn't throw stackoverflow exception
+        }
 
         public FileReader (IFileReader fileReader = null) {
             _fileReader = fileReader ?? new FileReader();
         }
         public IEnumerable<OpalTicket> OpenFile (string csvPath) {
             var list = new List<OpalTicket> ();
-            // What if file is empty?
+            if(csvPath == null || csvPath == String.Empty)
+                throw new NullReferenceException();
+
             // What if file or directory does not exists?
+            
             using (var reader = new StreamReader (csvPath)) {
                 var header = reader.ReadLine ();
                 var quote = '"'; // refactor
