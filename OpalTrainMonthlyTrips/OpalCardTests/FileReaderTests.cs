@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System;
 using Moq;
 using NUnit.Framework;
 using OpalCard.Classes;
@@ -57,16 +58,18 @@ namespace Tests {
         }
 
         [Test]
-        public void OpenFile_WhenCalled_ShouldReturnOpenCsvFile () {
-            //var _mockFileReader = new Mock<IFileReader> ();
-            _mockFileReader
-                .Setup (fr => fr.OpenFile (_path));
-
+        public void OpenFile_WhenCalled_ShouldReturnRecordsFromCsvFile () {
+            _mockFileReader.Setup (fr => fr.OpenFile (_path));
             var expected = new FileReader (_mockFileReader.Object).OpenFile (_path);
             Assert.AreEqual (
                 expected.Select (e => e.OpalTapCount),
                 _actual.Select (a => a.OpalTapCount)
             );
+        }
+
+        [Test]
+        public void OpenFile_WithNullArgument_ShouldReturnThrowNullPointerExceptiion () {
+            // 
         }
     }
 }
