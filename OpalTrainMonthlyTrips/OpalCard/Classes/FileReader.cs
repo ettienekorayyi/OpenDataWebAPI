@@ -9,7 +9,7 @@ namespace OpalCard.Classes {
     public class FileReader : IFileReader {
         
         public IEnumerable<OpalTicket> OpenFile (string csvPath) {
-            if(csvPath == null || csvPath == String.Empty)
+            if(csvPath == null)
                 throw new NullReferenceException();
 
             var list = new List<OpalTicket> ();
