@@ -1,12 +1,12 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System;
+using Controllers;
+using Microsoft.AspNetCore.Mvc;
 using Moq;
 using NUnit.Framework;
 using OpalCard.Classes;
 using OpalCard.Interfaces;
-using OpalCard.Model;
-using Controllers;
 
 namespace Tests {
     [TestFixture]
@@ -16,16 +16,24 @@ namespace Tests {
 
         [SetUp]
         public void Setup () {
-            _mockFileReader = new Mock<IFileReader>();
-            _controller = new OpalCardController( _mockFileReader.Object);
+            _mockFileReader = new Mock<IFileReader> ();
+            _controller = new OpalCardController (_mockFileReader.Object);
         }
 
         [Test]
-        public void OpenFile_Verify_ShouldPassed () {
+        public void GetRecords_WhenCalled_VerifyOpenFile () {
             var csvPath = Utility.GetFileFromDirectory ("OpalCard");
-            var records = _controller.GetRecords();
+            var records = _controller.GetRecords ();
 
-            _mockFileReader.Verify(f => f.OpenFile(csvPath));
+            _mockFileReader.Verify (f => f.OpenFile (csvPath));
+        }
+
+        [Test]
+        public void GetRecords_InvalidModelState_ShouldReturnBadRequestResult () {
+            _controller.ModelState.AddModelError ("key", "BadRequest");
+            var actual = _controller.GetRecords ().Result;
+            
+            Assert.IsInstanceOf<BadRequestResult> (actual);
         }
     }
 }
