@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using OpalCard.Classes;
@@ -12,9 +11,11 @@ namespace Controllers {
     [ApiController]
     public class OpalCardController : ControllerBase {
         private IFileReader _fileReader;
+        private IFolder _folder;
 
-        public OpalCardController (IFileReader fileReader = null) {
+        public OpalCardController (IFileReader fileReader = null, IFolder folder = null) {
             _fileReader = fileReader ?? new FileReader ();
+            _folder = folder ?? new Folder();
         }
 
         [HttpGet]
@@ -24,7 +25,7 @@ namespace Controllers {
 
             string csvPath = String.Empty;
             try {
-                csvPath = Utility.GetFileFromDirectory ();
+                csvPath = _folder.GetFolderPath ();
             } catch (NullReferenceException nullReferenceException) {
                 Console.WriteLine (nullReferenceException.Message);
             }

@@ -11,21 +11,26 @@ using OpalCard.Interfaces;
 namespace Tests {
     [TestFixture]
     public class OpalCardControllerTests {
-        private Mock<IFileReader> _mockFileReader;
+        private Mock<IFileReader> _fileReader;
+        private Mock<IFolder> _folder;
         private OpalCardController _controller;
 
         [SetUp]
         public void Setup () {
-            _mockFileReader = new Mock<IFileReader> ();
-            _controller = new OpalCardController (_mockFileReader.Object);
+            _fileReader = new Mock<IFileReader> ();
+            _folder = new Mock<IFolder>();
+            _controller = new OpalCardController (_fileReader.Object, _folder.Object);
+            
         }
 
         [Test]
         public void GetRecords_WhenCalled_VerifyOpenFile () {
-            var csvPath = Utility.GetFileFromDirectory ("OpalCard");
-            var records = _controller.GetRecords ();
+            _folder.Setup(f => f.GetFolderPath("OpalCard")).Returns(new Folder().GetFolderPath());
 
-            _mockFileReader.Verify (f => f.OpenFile (csvPath));
+            var csvPath = new Folder().GetFolderPath ("OpalCard");
+            var records = _controller.GetRecords ();
+            
+            _fileReader.Verify (f => f.OpenFile (csvPath));
         }
 
         [Test]
@@ -34,6 +39,13 @@ namespace Tests {
             var actual = _controller.GetRecords ().Result;
             
             Assert.IsInstanceOf<BadRequestResult> (actual);
+        }
+
+        [Test]
+        public void GetFileFromDirectory_NullPath_ShouldReturnNullReferenceException() {
+            _fileReader.Setup(r => r.OpenFile(null)).Throws(new NullReferenceException());
+            
+            Assert.Throws<NullReferenceException>(() => _controller.GetRecords ());
         }
     }
 }

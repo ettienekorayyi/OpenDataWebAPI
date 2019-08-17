@@ -11,12 +11,12 @@ using OpalCard.Model;
 namespace Tests {
     [TestFixture]
     public class FileReaderTests {
-        private Mock<IFileReader> _mockFileReader;
+        //private Mock<IFileReader> _mockFileReader;
         private string _path;
 
         [SetUp]
         public void Setup () {
-            _mockFileReader = new Mock<IFileReader> ();
+            //_mockFileReader = new Mock<IFileReader> ();
             _path = @"C:\Users\Stephen\Documents\Visual Studio Code\C#\OpenDataWebAPI\OpalTrainMonthlyTrips\OpalCardTests\DataSet\OpalTrainMonthlyTrip.csv";
         }
 
