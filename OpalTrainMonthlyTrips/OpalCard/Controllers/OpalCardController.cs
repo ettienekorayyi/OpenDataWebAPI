@@ -29,7 +29,6 @@ namespace Controllers {
             } catch (NullReferenceException nullReferenceException) {
                 Console.WriteLine (nullReferenceException.Message);
             }
-
             var csvFile = _fileReader.OpenFile (csvPath);
             return csvFile.ToList ();
         }

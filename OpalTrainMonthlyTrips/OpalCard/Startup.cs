@@ -33,7 +33,7 @@ namespace OpalCard {
                             {
                                 Name = "Stephen Corral",
                                 Email = string.Empty,
-                                Url = new Uri("https://www.linkedin.com/in/stephen-melben-corral-73468b6b/"),
+                                Url = new Uri("https://localhost:5001/swagger/v1/swagger.json"),
                             }
                         }
                     );
